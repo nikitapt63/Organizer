@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="{% static 'css/base_clock.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+
+    <title>Organzier</title>
+</head>
+<body>
+
+    <div class="valuate">
+            <b>{{res_valuate.info_1.valuate}}: </b> {{res_valuate.info_1.score}}<br>
+            <b>{{res_valuate.info_2.valuate}}: </b> {{res_valuate.info_2.score}}<br>
+            <b>{{res_valuate.info_3.valuate}}: </b> {{res_valuate.info_3.score}}<br>
+    </div>
+    <form method="link" action="http://127.0.0.1:2000/task_list/" class="link">
+            <input type="submit" value="TODO">
+        </form>
+
+	<div class="time">
+		<iframe  frameborder="no" scrolling="no" width="280" height="150" src="https://yandex.by/time/widget/?geoid=europe%2Fminsk&lang=en&layout=vert&type=analog&face=serif"></iframe>
+		<iframe  frameborder="no" scrolling="no" width="280" height="150" src="https://yandex.by/time/widget/?geoid=europe%2Flondon&lang=en&layout=vert&type=analog&face=serif"></iframe>
+		<iframe  frameborder="no" scrolling="no" width="280" height="150" src="https://yandex.by/time/widget/?geoid=america%2Fnew_york&lang=en&layout=vert&type=analog&face=serif"></iframe>
+	</div>
+
+	<div class="upload">
+		 <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+             <div class="example-1">
+                <div class="form-group">
+                    <label class="label">
+                        <i class="material-icons">+</i>
+                        <span class="title">Добавить файл</span>
+                        <input type="file">
+                    </label>
+                </div>
+            </div>
+        </form>
+        <iframe height="600px" width="1000px" src="https://docs.google.com/document/d/e/2PACX-1vR23kXuBTwOMDH-2DN54XQWw-tHH6-5PwHnz6QGMnBbvI4xkT47Hljqm5Tuttr6hWqXEmS5k4zvJ0re/pub?embedded=true"></iframe>
+        <div class="notes">
+            <textarea id="notes" ></textarea>
+        </div>
+    </div>
+
+</body>
+</html>

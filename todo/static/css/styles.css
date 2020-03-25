@@ -1,0 +1,35 @@
+body {
+	font-family: 'Montserrat';
+	background: url(images/ashley-edwards-zwmkMkJ2Qi4-unsplash.jpg) 50% 50% no-repeat;
+    background-size: cover;
+}
+#wrapper {
+	margin-top: 10% !important;
+}
+#content {
+ 	background: #00000;
+	padding: 25px;
+}
+#content > h2 {
+	font-size: 18px;
+	text-align: center;
+	padding-top: 0;
+}
+.t10 {
+	margin-top: 10px;
+}
+.t20 {
+	margin-top: 20px;
+}
+.todo-completed {
+	text-decoration: line-through;
+	opacity: 0.35;
+ 	background: #98FB98			;
+}
+footer {
+	margin-top: 20px;
+	color: white;
+}
+.list-group-item {
+	color: black;
+}
